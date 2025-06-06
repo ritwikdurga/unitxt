@@ -110,14 +110,7 @@ iso_lang_code_mapping = {
 
 
 langs_to_include = [  # langs currently supported by sacrebleu
-    "ara",
-    "fra",
-    "deu",
-    "jpn",
-    "kor",
-    "por",
-    "ron",
-    "spa",
+    "hin"
 ]
 
 langs = [
@@ -144,8 +137,10 @@ for pair in pairs:
                 fields={
                     "source_language": iso_lang_code_mapping[pair["src"]].lower(),
                     "target_language": iso_lang_code_mapping[pair["tgt"]].lower(),
+                    "task_data.lang_pair": f"{pair['src']}-{pair['tgt']}",
                 }
             ),
+
         ],
         task="tasks.translation.directed",
         templates="templates.translation.directed.all",
@@ -153,5 +148,5 @@ for pair in pairs:
     if pair == pairs[0]:
         test_card(card, demos_taken_from="test")
     add_to_catalog(
-        card, f"cards.mt.flores_101.{pair['src']}_{pair['tgt']}", overwrite=True
+        card, f"cards.mt.flores_101.{pair['src']}_{pair['tgt']}", metric="metrics.normalized_sacrebleu", overwrite=True
     )
