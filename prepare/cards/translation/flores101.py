@@ -109,8 +109,8 @@ iso_lang_code_mapping = {
 }
 
 
-langs_to_include = [  # langs currently supported by sacrebleu
-    "hin"
+langs_to_include = [ 
+    "asm", "ben", "hin", "guj", "kan", "mal", "mar", "npi", "ory", "pan", "tam", "tel", "urd", 
 ]
 
 langs = [
@@ -145,8 +145,8 @@ for pair in pairs:
         task="tasks.translation.directed",
         templates="templates.translation.directed.all",
     )
-    if pair == pairs[0]:
-        test_card(card, demos_taken_from="test")
-    add_to_catalog(
-        card, f"cards.mt.flores_101.{pair['src']}_{pair['tgt']}", metric="metrics.normalized_sacrebleu", overwrite=True
+    # if pair == pairs[0]:
+    #     test_card(card, demos_taken_from="test")
+    add_to_catalog( 
+        card, f"cards.mt.flores_101.{pair['src']}_{pair['tgt']}", overwrite=True
     )

@@ -10,6 +10,7 @@
     },
     "prediction_type": "str",
     "metrics": [
+        "metrics.normalized_chrf",
         "metrics.normalized_sacrebleu"
     ]
 }

@@ -24,7 +24,32 @@ language_to_tokenizer = {
     "ko": "ko-mecab",
     "japanese": "ja-mecab",
     "ja": "ja-mecab",
+    "hin": "intl",
     "hindi": "intl",
+    "asm": "intl",
+    "assamese": "intl",
+    "ben": "intl",
+    "bengali": "intl",
+    "guj": "intl",
+    "gujarati": "intl",
+    "kan": "intl",
+    "kannada": "intl",
+    "mal": "intl",
+    "malayalam": "intl",
+    "mar": "intl",
+    "marathi": "intl",
+    "npi": "intl",
+    "nepali": "intl",
+    "ory": "intl",
+    "odia": "intl",
+    "pan": "intl",
+    "punjabi": "intl",
+    "tam": "intl",
+    "tamil": "intl",
+    "tel": "intl",
+    "telugu": "intl",
+    "urd": "intl",
+    "urdu": "intl",
 }
 
 metric = MetricPipeline(
@@ -43,7 +68,7 @@ metric = MetricPipeline(
             strict=True,
         ),
     ],
-    metric=NormalizedSacrebleu(),
+    metric=NormalizedSacrebleu(), 
 )
 
 ### ENGLISH
