@@ -5839,8 +5839,8 @@ class NormalizedChrf(HuggingfaceMetric):
     hf_metric_name = "chrf"           # Name of the HF metric
     main_score = "score"             # Align with the HF metric output key
     prediction_type = str             # Input and reference are strings
-    scale = 100.0              # Convert HF's 0-100 to 0-1
-    scaled_fields = ["score"]        # HF metric outputs 'score' to be scaled
+    scale = 100.0                     # Convert HF's 0-100 to 0-1
+    scaled_fields = ["score"]         # HF metric outputs 'score' to be scaled
 
 class NormalizedSacrebleu(HuggingfaceMetric):
     hf_metric_name = "sacrebleu"
