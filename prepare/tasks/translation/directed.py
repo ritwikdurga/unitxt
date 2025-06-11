@@ -12,8 +12,7 @@ add_to_catalog(
         prediction_type=str,
         metrics=[
             "metrics.normalized_chrf",
-            "metrics.normalized_sacrebleu",
-            
+            "metrics.normalized_sacrebleu"
         ],
     ),
     "tasks.translation.directed",
